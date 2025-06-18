@@ -1,5 +1,20 @@
+import controllers.BinaryTree;
+import models.Node;
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        BinaryTree ab = new BinaryTree();
+        ab.insert(50);
+        ab.insert(17);
+        ab.insert(76);
+        ab.insert(9);
+        ab.insert(23);
+        ab.insert(54);
+        ab.insert(14);
+        ab.insert(19);
+
+        ab.preOrder();
+        ab.postOrder();
+        ab.inOrder();
+
     }
 }
