@@ -1,7 +1,7 @@
 import controllers.BinaryTree;
-import models.Node;
+
 public class App {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         BinaryTree ab = new BinaryTree();
         ab.insert(50);
         ab.insert(17);
@@ -12,19 +12,34 @@ public class App {
         ab.insert(14);
         ab.insert(19);
 
-        ab.preOrder();
-        ab.postOrder();
-        ab.inOrder();
 
-        if (ab.findeValue(23)){
-            System.out.println("encontro el valor 23");
-        } else {
-            System.out.println("no encontro el valor 23");
-        }
-        if (ab.findeValue(77)){
-            System.out.println("encontro el valor 77");
-        } else {
-            System.out.println("no encontro el valor 77");
-        }
+        System.out.println("Nombre: Sebastian Loza");
+        System.out.println("Peso del arbol = " + ab.getWeight());
+        System.out.println("Altura es = "     + ab.getHeight());
+        System.out.println();
+
+        System.out.print("Arbol InOrder: ");
+        ab.printInOrder();        
+
+        System.out.print("Arbol InOrder con alturas: ");
+        ab.printInOrderWithHeight();
+
+        System.out.print("Arbol InOrder con factor de equilibrio: ");
+        ab.printInOrderWithBalanceFactor();
+
+        System.out.println();
+        System.out.println("Arbol esta equilibrado = " + ab.isBalanced());
+        System.out.println("Existe el nodo 15= "       + ab.findeValue(15));
+
+        System.out.println("Agregamos valor = 15");
+        ab.insert(15);
+
+        System.out.println("Arbol esta equilibrado = " + ab.isBalanced());
+
+        System.out.print("\nArbol InOrder con factor de equilibrio: ");
+        ab.printInOrderWithBalanceFactor();
+
+        ab.printInOrderWithBalanceFactor();
+        ab.printUnbalancedNodes();
     }
 }
